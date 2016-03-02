@@ -26,10 +26,10 @@ app.use(express.query());
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/wechat', wechat('szassis', function (req, res, next) {
+app.use('/wechat', wechat('withwind', function (req, res, next) {
     var message = req.weixin;
     if(message.MsgType == 'text'){
-          res.reply({ type: "text", content: "you input " + message.Content});  
+          res.reply({ type: "text", content: "你说： " + message.Content});  
     }
 }));
 
